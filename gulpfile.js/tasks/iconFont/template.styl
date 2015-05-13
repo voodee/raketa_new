@@ -1,5 +1,3 @@
-// {{comment}}
-
 @font-face
   font-family: {{fontName}}
   src: url("{{fontPath}}/{{fontName}}.eot")
@@ -7,7 +5,7 @@
   font-weight: normal
   font-style: normal
 
-=icon($content: '')
+icon($content = "")
   &:before
     -moz-osx-font-smoothing: grayscale
     -webkit-font-smoothing: antialiased
@@ -19,18 +17,17 @@
     line-height: 1
     speak: none
     text-transform: none
-    @content
-
+    {block}
 .icon
-  +icon
+  icon()
+
 
 {% for icon in icons -%}
 // Save variable
-$icon-{{icon.name}}: "\{{icon.code}}"
+$icon-{{icon.name}} = "\{{icon.code}}"
 // Save mixin
-=icon--{{icon.name}}
-  +icon($icon-{{icon.name}})
-    @content
+icon--{{icon.name}}()
+  icon($icon-{{icon.name}})
 // Expose as class
 .icon.-{{icon.name}}:before
   content: $icon-{{icon.name}}

@@ -4,14 +4,13 @@ var webpackManifest = require('../lib/webpackManifest')
 
 module.exports = function(env) {
 
-  var jsSrc = paths.sourceAssets + '/javascripts/'
-  var jsDest = paths.publicAssets + '/javascripts/'
-  var publicPath = 'assets/javascripts/'
+  var jsSrc = paths.sourceAssets + '/js/'
+  var jsDest = paths.publicAssets + '/js/'
+  var publicPath = 'assets/js/'
 
   var webpackConfig = {
     entry: {
-      page1: [jsSrc + 'page1.js'],
-      page2: [jsSrc + 'page2.js']
+      modernizr: [jsSrc + 'vendor/modernizr-2.8.3.min.js']
     },
 
     output: {

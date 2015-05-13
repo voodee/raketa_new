@@ -52,7 +52,14 @@
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~0.1.1",
-    "webpack": "^1.7.3"
+    "webpack": "^1.7.3",
+    "gulp-haml": "*",
+    "gulp-haml-coffee": "*",
+    "gulp-stylus": "*",
+    "nib": "*",
+    "gulp-myth": "*",
+    "bootstrap-styl": "*",
+    "gulp-file-include": "*"
   },
   "devDependencies": {
     "compression": "^1.4.1",
