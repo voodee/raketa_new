@@ -10,6 +10,7 @@ module.exports = function(env) {
 
   var webpackConfig = {
     entry: {
+      main: [jsSrc + 'main.coffee'],
       modernizr: [jsSrc + 'vendor/modernizr-2.8.3.min.js']
     },
 
@@ -19,19 +20,23 @@ module.exports = function(env) {
       publicPath: publicPath
     },
 
-    plugins: [],
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
+    ],
 
     resolve: {
-      extensions: ['', '.js']
+      extensions: ['', '.js', '.coffee']
     },
 
     module: {
       loaders: [
-        {
-          test: /\.js$/,
-          loader: 'babel-loader?experimental',
-          exclude: /node_modules/
-        }
+        {test: /\.js$/, loader: 'babel-loader?experimental', exclude: /node_modules/ },
+        { test: /\.coffee$/, loader: "coffee-loader", exclude: /node_modules/ },
+        { test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate", exclude: /node_modules/ }
+      
       ]
     }
   }

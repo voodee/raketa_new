@@ -1,10 +1,10 @@
-var gulp          = require('gulp'),
-    config        = require('../config/haml'),
-    browserSync   = require('browser-sync'),
-    haml = require('gulp-haml-coffee'),
-    swig         = require('gulp-swig'),
-    fileinclude = require('gulp-file-include'),
-    handleErrors = require('../lib/handleErrors');
+var gulp            = require('gulp'),
+    config          = require('../config/haml'),
+    browserSync     = require('browser-sync'),
+    haml            = require('gulp-haml-coffee'),
+    swig            = require('gulp-swig'),
+    fileinclude     = require('gulp-file-include'),
+    handleErrors    = require('../lib/handleErrors');
 
 
 
